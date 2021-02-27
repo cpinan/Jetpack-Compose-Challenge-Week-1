@@ -18,23 +18,53 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.runtime.mutableStateOf
+import com.example.androiddevchallenge.components.PuppyScaffold
+import com.example.androiddevchallenge.data.Puppy
+import com.example.androiddevchallenge.data.puppies
+import com.example.androiddevchallenge.ui.dashboard.DashboardScreen
+
+const val DASHBOARD_SCREEN = 1
+const val DETAIL_SCREEN = 2
+
+private val currentScreen = mutableStateOf(DASHBOARD_SCREEN)
+private var currentPuppy: Puppy = puppies[0]
 
 class MainActivity : AppCompatActivity() {
+    @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyTheme {
-                MyApp()
+            PuppyScaffold {
+                if (currentScreen.value == DASHBOARD_SCREEN) {
+                    DashboardScreen()
+                } else {
+
+                }
             }
         }
     }
+
+    override fun onBackPressed() {
+        if (currentScreen.value == DETAIL_SCREEN) {
+            currentScreen.value = DASHBOARD_SCREEN
+            return
+        }
+        super.onBackPressed()
+    }
 }
+
+fun puppyClicked(puppy: Puppy) {
+    if (currentScreen.value == DASHBOARD_SCREEN) {
+        currentPuppy = puppy
+        currentScreen.value = DETAIL_SCREEN
+    }
+}
+
+
+/*
+
 
 // Start building your app here!
 @Composable
@@ -47,7 +77,7 @@ fun MyApp() {
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LightPreview() {
-    MyTheme {
+    PuppyTheme {
         MyApp()
     }
 }
@@ -55,7 +85,9 @@ fun LightPreview() {
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun DarkPreview() {
-    MyTheme(darkTheme = true) {
+    PuppyTheme(darkTheme = true) {
         MyApp()
     }
 }
+
+ */
