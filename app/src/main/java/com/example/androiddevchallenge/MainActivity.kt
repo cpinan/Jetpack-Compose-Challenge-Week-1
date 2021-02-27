@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
                 if (currentScreen.value == DASHBOARD_SCREEN) {
                     DashboardScreen()
                 } else {
-
                 }
             }
         }
@@ -61,7 +60,6 @@ fun puppyClicked(puppy: Puppy) {
         currentScreen.value = DETAIL_SCREEN
     }
 }
-
 
 /*
 
