@@ -18,28 +18,32 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.mutableStateOf
 import com.example.androiddevchallenge.components.PuppyScaffold
 import com.example.androiddevchallenge.data.Puppy
 import com.example.androiddevchallenge.data.puppies
 import com.example.androiddevchallenge.ui.dashboard.DashboardScreen
+import com.example.androiddevchallenge.ui.detail.DetailScreen
 
 const val DASHBOARD_SCREEN = 1
 const val DETAIL_SCREEN = 2
 
 private val currentScreen = mutableStateOf(DASHBOARD_SCREEN)
-private var currentPuppy: Puppy = puppies[0]
+private var currentPuppy = mutableStateOf(puppies[0])
 
 class MainActivity : AppCompatActivity() {
+    @ExperimentalAnimationApi
     @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             PuppyScaffold {
-                if (currentScreen.value == DASHBOARD_SCREEN) {
-                    DashboardScreen()
-                } else {
+                DashboardScreen()
+                AnimatedVisibility(visible = currentScreen.value == DETAIL_SCREEN) {
+                    DetailScreen(currentPuppy.value)
                 }
             }
         }
@@ -56,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
 fun puppyClicked(puppy: Puppy) {
     if (currentScreen.value == DASHBOARD_SCREEN) {
-        currentPuppy = puppy
+        currentPuppy.value = puppy
         currentScreen.value = DETAIL_SCREEN
     }
 }

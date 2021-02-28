@@ -1,25 +1,74 @@
-name: Super-Linter
+name: Check
 
-# Run this workflow every time a new commit pushed to your repository
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  # Set the job key. The key is displayed as the job name
-  # when a job name is not provided
-  super-lint:
-    # Name the Job
-    name: Lint code base
-    # Set the type of machine to run on
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
-      # Runs the Super-Linter action
-      - name: Run Super-Linter
-        uses: github/super-linter@v3
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Build project
+        run: ./gradlew spotlessCheck assembleDebug lintDebug --stacktrace
+
+      - name: Upload build outputs (APKs)
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-outputs
+          path: app/build/outputs
+
+      - name: Upload build reports
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-reports
+          path: app/build/reports
+
+  test:
+    needs: build
+    runs-on: macOS-latest # enables hardware acceleration in the virtual machine
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        api-level: [23, 26, 29]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Run instrumentation tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          arch: x86
+          disable-animations: true
+          script: ./gradlew connectedCheck --stacktrace
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-reports
+          path: app/build/reports

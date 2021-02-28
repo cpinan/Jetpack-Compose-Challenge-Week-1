@@ -17,14 +17,9 @@ package com.example.androiddevchallenge.ui.dashboard
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -35,17 +30,22 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.Puppy
 import com.example.androiddevchallenge.data.puppies
 import com.example.androiddevchallenge.puppyClicked
 import com.example.androiddevchallenge.ui.theme.shapes
 import com.example.androiddevchallenge.ui.theme.typography
+
 
 /**
  * @author Carlos Piñan
@@ -63,9 +63,9 @@ fun DashboardScreen() {
 @Composable
 fun PuppyList() {
     /**
-     items(puppies) { puppy ->
-     PuppyElement(puppy)
-     }
+    items(puppies) { puppy ->
+    PuppyElement(puppy)
+    }
      */
     LazyVerticalGrid(
         cells = GridCells.Fixed(2),
@@ -101,7 +101,7 @@ fun PuppyElement(
             elevation = 6.dp
         ) {
             ConstraintLayout {
-                val (image, info) = createRefs()
+                val (image, info, foreground) = createRefs()
 
                 Image(
                     painter = painterResource(id = puppy.image),
@@ -116,6 +116,19 @@ fun PuppyElement(
                             end.linkTo(parent.end)
                             bottom.linkTo(parent.bottom)
                         }
+                )
+
+                Box(
+                    modifier = Modifier
+                        .constrainAs(foreground) {
+                            top.linkTo(parent.top)
+                            start.linkTo(parent.start)
+                            end.linkTo(parent.end)
+                            bottom.linkTo(parent.bottom)
+                        }
+                        .fillMaxWidth()
+                        .fillMaxHeight()
+                        .background(Color(0x55000000))
                 )
 
                 Column(
@@ -134,26 +147,36 @@ fun PuppyElement(
                         textAlign = TextAlign.Left
                     )
 
-                    Row {
-                        Text(
-                            text = puppy.time,
-                            style = typography.h5,
-                            textAlign = TextAlign.Left
-                        )
+                    Text(
+                        text = puppy.time,
+                        style = typography.h5,
+                        textAlign = TextAlign.Left
+                    )
 
+                    Row {
                         if (puppy.isMale) {
                             Text(
-                                text = "Boy",
+                                text = stringResource(R.string.boy),
                                 style = typography.h5,
                                 textAlign = TextAlign.Left
                             )
                         } else {
                             Text(
-                                text = "Girl",
+                                text = stringResource(R.string.girl),
                                 style = typography.h5,
                                 textAlign = TextAlign.Left
                             )
                         }
+
+                        val icon = if (puppy.isMale) R.drawable.ic_male else R.drawable.ic_female
+
+                        Image(
+                            colorFilter = ColorFilter.tint(Color.White),
+                            painter = painterResource(id = icon),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(8.dp, 0.dp)
+                        )
                     }
                 }
             }

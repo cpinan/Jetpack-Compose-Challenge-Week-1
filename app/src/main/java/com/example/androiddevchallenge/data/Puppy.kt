@@ -24,5 +24,6 @@ data class Puppy(
     val description: String,
     val isMale: Boolean,
     val time: String,
-    val image: Int
+    val image: Int,
+    var isFavorite: Boolean = false
 )

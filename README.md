@@ -8,6 +8,7 @@
 <!--- Describe your app in one or two sentences -->
 Puppy adoption app allows you to see about different puppies that need your help! You can appreciate them, and adopt them!
 
+Thanks to https://dribbble.com/shots/9794301-Pet-Adoption-App?showSimilarShots=true&_=1614445299856# I minimized the idea.
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->

@@ -11,4 +11,7 @@
       -->
     <string name="app_name">AndroidDevChallenge</string>
     <string name="close">CLOSE</string>
+    <string name="boy">Boy</string>
+    <string name="girl">Girl</string>
+    <string name="Adoption">Adoption</string>
 </resources>

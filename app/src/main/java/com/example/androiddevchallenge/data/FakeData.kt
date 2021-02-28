@@ -17,6 +17,9 @@ package com.example.androiddevchallenge.data
 
 import com.example.androiddevchallenge.R
 
+private val desc1 =
+    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+
 /**
  * @author Carlos Piñan
  */
@@ -24,7 +27,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_001
@@ -32,7 +35,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_002
@@ -40,7 +43,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_003
@@ -49,14 +52,14 @@ val puppies = listOf(
         name = "Bobby",
         info = "Nice boy full of love",
         description = "",
-        isMale = true,
+        isMale = false,
         time = "3 months",
         image = R.drawable.puppy_004
     ),
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_005
@@ -64,7 +67,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_006
@@ -72,7 +75,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_007
@@ -80,7 +83,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_008
@@ -88,7 +91,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_009
@@ -96,7 +99,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_010
@@ -104,7 +107,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_011
@@ -112,7 +115,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_012
@@ -120,7 +123,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_013
@@ -128,7 +131,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_014
@@ -136,7 +139,7 @@ val puppies = listOf(
     Puppy(
         name = "Bobby",
         info = "Nice boy full of love",
-        description = "",
+        description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_015
