@@ -19,7 +19,14 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -46,7 +53,6 @@ import com.example.androiddevchallenge.puppyClicked
 import com.example.androiddevchallenge.ui.theme.shapes
 import com.example.androiddevchallenge.ui.theme.typography
 
-
 /**
  * @author Carlos Piñan
  */
@@ -63,9 +69,9 @@ fun DashboardScreen() {
 @Composable
 fun PuppyList() {
     /**
-    items(puppies) { puppy ->
-    PuppyElement(puppy)
-    }
+     items(puppies) { puppy ->
+     PuppyElement(puppy)
+     }
      */
     LazyVerticalGrid(
         cells = GridCells.Fixed(2),
