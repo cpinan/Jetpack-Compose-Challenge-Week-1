@@ -93,14 +93,14 @@ fun PuppyElement(
             Spacer(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(64.dp)
+                    .height(24.dp)
             )
         }
         Card(
             modifier = Modifier
                 .padding(16.dp)
                 .clip(shapes.small)
-                .height(240.dp)
+                .height(280.dp)
                 .clickable {
                     puppyClicked(puppy = puppy)
                 },

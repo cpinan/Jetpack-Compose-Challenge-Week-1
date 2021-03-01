@@ -16,18 +16,8 @@
 package com.example.androiddevchallenge.components
 
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.ui.theme.PuppyTheme
 
 /**
@@ -39,26 +29,6 @@ fun PuppyScaffold(
 ) {
     PuppyTheme {
         Scaffold(
-            topBar = {
-                TopAppBar(
-                    backgroundColor = Color.Transparent,
-                    elevation = 5.dp,
-                    contentColor = MaterialTheme.colors.onSurface,
-                    title = {
-                        Row {
-                            Text(
-                                text = "Puppy App",
-                                textAlign = TextAlign.Center,
-                                style = TextStyle(
-                                    color = Color.Black,
-                                    fontSize = 16.sp,
-                                    fontWeight = FontWeight.Bold
-                                ),
-                            )
-                        }
-                    },
-                )
-            },
             content = content
         )
     }

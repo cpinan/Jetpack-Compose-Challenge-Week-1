@@ -29,119 +29,119 @@ val puppies = listOf(
         info = "Nice boy full of love",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "6 months",
         image = R.drawable.puppy_001
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Kausha",
+        info = "He is a good boy",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "9 months",
         image = R.drawable.puppy_002
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Yani",
+        info = "All good with she",
         description = "$desc1",
-        isMale = true,
-        time = "3 months",
+        isMale = false,
+        time = "2 months",
         image = R.drawable.puppy_003
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
-        description = "",
+        name = "Sergius",
+        info = "Bad mood, but lovely and loyal boy",
+        description = "$desc1",
         isMale = false,
-        time = "3 months",
+        time = "1 year",
         image = R.drawable.puppy_004
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Frank",
+        info = "Loves to play",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "2 years",
         image = R.drawable.puppy_005
     ),
     Puppy(
-        name = "Bobby",
+        name = "Boni",
         info = "Nice boy full of love",
         description = "$desc1",
-        isMale = true,
-        time = "3 months",
+        isMale = false,
+        time = "5 months",
         image = R.drawable.puppy_006
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Carlos",
+        info = "Wowowowowowow",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "9 months",
         image = R.drawable.puppy_007
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Pelao",
+        info = "Full of hair!!!!",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "3 years",
         image = R.drawable.puppy_008
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Hansy",
+        info = "Big and soft",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "4 years",
         image = R.drawable.puppy_009
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "EduEdu",
+        info = "Loves to play a lot",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "7 months",
         image = R.drawable.puppy_010
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Wow 1",
+        info = "No ideas for more text",
         description = "$desc1",
         isMale = true,
         time = "3 months",
         image = R.drawable.puppy_011
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Wow 2",
+        info = "No ideas for more text",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "9 months",
         image = R.drawable.puppy_012
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Doggie",
+        info = "No ideas for more text",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "11 months",
         image = R.drawable.puppy_013
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "Scooby",
+        info = "Loves to solve cases",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "5 years",
         image = R.drawable.puppy_014
     ),
     Puppy(
-        name = "Bobby",
-        info = "Nice boy full of love",
+        name = "FinalOne",
+        info = "The last but not least",
         description = "$desc1",
         isMale = true,
-        time = "3 months",
+        time = "5 months",
         image = R.drawable.puppy_015
     )
 )
